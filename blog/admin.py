@@ -7,7 +7,7 @@ admin.site.register(UserProfile, UserProfileAdmin)
 
 class ArticleAdmin(admin.ModelAdmin):
     search_fields = ['title', 'content']
-    list_display = ['title', 'category', 'created_at']
+    list_display = ['title', 'category', 'cover','created_at']
 admin.site.register(Article, ArticleAdmin)
 
 class CategoryAdmin(admin.ModelAdmin):
