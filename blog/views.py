@@ -41,7 +41,6 @@ class AllArticleAPIView(APIView):
     def get(self, request, format=None):
         try:
             all_articles = Article.objects.all().order_by('-created_at')[:10]
-            print(all_articles[0].title)
             data = []
             for article in all_articles:
                 data.append({
@@ -137,7 +136,6 @@ class UpdateArticleAPIView(APIView):
             return Response({'status': "Internal Server Error, We'll Check It Later"},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-""""
 class DeleteArticleAPIView(APIView):
     def post(self, request, format=None):
         try:
@@ -151,4 +149,3 @@ class DeleteArticleAPIView(APIView):
         except:
             return Response({'status': "Internal Server Error, We'll Check It Later"},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-"""
